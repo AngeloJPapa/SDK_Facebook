@@ -230,10 +230,19 @@ public class SDK_Facebook extends CordovaPlugin {
                     }
                 });
     }
-
-
-
-
-
     
+    /**
+    * This function assumes logger is an instance of AppEventsLogger and has been
+    * created using AppEventsLogger.newLogger() call.
+    */
+    public void logInitiateCheckoutEvent (String contentData, String contentId, String contentType, int numItems, boolean paymentInfoAvailable, String currency, double totalPrice) {
+        Bundle params = new Bundle();
+        params.putString(AppEventsConstants.EVENT_PARAM_CONTENT, contentData);
+        params.putString(AppEventsConstants.EVENT_PARAM_CONTENT_ID, contentId);
+        params.putString(AppEventsConstants.EVENT_PARAM_CONTENT_TYPE, contentType);
+        params.putInt(AppEventsConstants.EVENT_PARAM_NUM_ITEMS, numItems);
+        params.putInt(AppEventsConstants.EVENT_PARAM_PAYMENT_INFO_AVAILABLE, paymentInfoAvailable ? 1 : 0);
+        params.putString(AppEventsConstants.EVENT_PARAM_CURRENCY, currency);
+        logger.logEvent(AppEventsConstants.EVENT_NAME_INITIATED_CHECKOUT, totalPrice, params);
+    }   
 }

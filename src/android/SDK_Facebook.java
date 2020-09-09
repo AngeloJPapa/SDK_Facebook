@@ -15,10 +15,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.util.Currency;
 import java.util.Iterator;
 
 import com.facebook.FacebookSdk;
 import com.facebook.CallbackManager;
+import com.facebook.LoggingBehavior;
+import com.facebook.appevents.AppEventsConstants;
 import com.facebook.share.model.ShareOpenGraphObject;
 import com.facebook.share.model.ShareOpenGraphAction;
 import com.facebook.share.model.ShareOpenGraphContent;
@@ -27,6 +31,7 @@ import com.facebook.share.widget.ShareDialog;
 import com.facebook.share.widget.GameRequestDialog;
 import com.facebook.share.widget.MessageDialog;
 import com.facebook.applinks.AppLinkData;
+
 
 
 

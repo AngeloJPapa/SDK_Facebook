@@ -23,7 +23,30 @@ var SDK_Facebook = {
     	console.log('----------------Llamando a la funcion logOnButtonClickEvent Facebook_SDK');	  
     	exec(success, error, 'SDK_Facebook', 'logOnButtonClickEvent', [arg0]);
     }
-        
+	,logViewContent : function (contentType, contentData, contentId, contentCurrency, contentPrice, s, f)
+	{
+	  exec(s, f, 'SDK_Facebook', 'logViewContent', [contentType, contentData, contentId, contentCurrency, contentPrice])
+	}
+	,logEventSearch : function (contentType, contentData, contentId, searchQuery, searchSuccess, s, f)
+	{
+	  exec(s, f, 'SDK_Facebook', 'logEventSearch', [contentType, contentData, contentId, searchQuery, searchSuccess])
+	}
+	,logEventProductCartAdd : function (contentType, contentData, contentId, contentCurrency, contentPrice, s, f)
+	{
+	  exec(s, f, 'SDK_Facebook', 'logEventProductCartAdd', [contentType, contentData, contentId, contentCurrency, contentPrice])
+	}
+	,logEventProductCustomize : function (contentParam, contentValue, s, f)
+	{
+	  exec(s, f, 'SDK_Facebook', 'logEventProductCustomize', [contentParam, contentValue])
+	}
+	,logEventInitiateCheckout : function (contentType, contentData, contentId, contentCurrency, contentPrice, numItems, PaymentInfo, s, f)
+	{
+	  exec(s, f, 'SDK_Facebook', 'logEventInitiateCheckout', [contentType, contentData, contentId, contentCurrency, contentPrice, numItems, PaymentInfo])
+	}
+	,logEventProductPurchase : function (contentType, contentData, contentId, contentCurrency, contentPrice, s, f)
+	{
+	  exec(s, f, 'SDK_Facebook', 'logEventProductPurchase', [contentType, contentData, contentId, contentCurrency, contentPrice])
+	}
 };
 
 cordova.addConstructor(function () {
